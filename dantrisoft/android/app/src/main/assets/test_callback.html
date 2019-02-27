@@ -1,0 +1,8 @@
+<button>Send post message from web</button>
+
+<script>
+document.querySelector("button").onclick = function() {
+  console.log("Send post message");
+  window.postMessage("Hello React", "*");
+}
+</script>

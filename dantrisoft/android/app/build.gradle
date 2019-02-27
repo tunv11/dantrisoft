@@ -134,6 +134,8 @@ android {
 }
 
 dependencies {
+    implementation project(':react-native-ble-plx')
+    implementation project(':react-native-webview')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
     implementation "com.facebook.react:react-native:+"  // From node_modules
@@ -145,3 +147,10 @@ task copyDownloadableDepsToLibs(type: Copy) {
     from configurations.compile
     into 'libs'
 }
+
+
+task copyReactNativeHTML(type: Copy) {
+    from '../../src/resources/html'
+    into 'src/main/assets/html'
+}
+
