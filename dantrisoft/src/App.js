@@ -22,13 +22,8 @@ export default class App extends Component {
   render() {
     const PolicyHTML = require('./test_callback.html');
     return (
-      // <View style={styles.container}>
       <WebView
-        // source={{ uri: "https://dantrisoft.vn/test.html" }}
         source={{ uri: "http://orderblu.dantrisoft.vn/#/login" }}
-        // source={{ uri: "http://orderblu.dantrisoft.vn/test_callback.html" }}
-        // source={{ uri: 'file:///android_asset/test_callback.html' }}
-        // style={{ marginTop: 20 }}
         onMessage={data => this.onMessage(data)}
         originWhitelist={['*']}
         javaScriptEnabled={true}
@@ -36,14 +31,12 @@ export default class App extends Component {
         originWhitelist={['*']}
         useWebKit={true}
       />
-      // </View>
     );
   }
 
   onMessage(data) {
     //Prints out data that was passed.
     alert(data.nativeEvent.data);
-    // console.log(`kkkkkkkkkkkkkkkkkkkkkkk` + JSON.stringify(data));
   }
 }
 
