@@ -27,9 +27,23 @@
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
   UIViewController *rootViewController = [UIViewController new];
   rootViewController.view = rootView;
+  if (@available(iOS 11.0, *)) {
+    UIWindow *window = UIApplication.sharedApplication.keyWindow;
+    CGFloat topPadding = window.safeAreaInsets.top;
+  }
+  
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
   return YES;
+  
 }
+
+//- (BOOL)hasTopNotch {
+//  if (@available(iOS 11.0, *)) {
+//    return [[[UIApplication sharedApplication] delegate] window].safeAreaInsets.top > 20.0;
+//  }
+//
+//  return  NO;
+//}
 
 @end
