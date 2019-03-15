@@ -144,8 +144,8 @@ android {
 }
 
 dependencies {
-    implementation project(':react-native-ble-plx')
-    implementation project(':react-native-webview')
+    implementation project(':react-native-bluetooth-escpos-printer')
+    implementation project(':react-native-fetch-blob')
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
     implementation 'com.facebook.react:react-native:+'

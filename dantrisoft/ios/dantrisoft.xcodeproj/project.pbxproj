@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -27,6 +26,9 @@
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 		AF900E5B2226AA06003A6AD3 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF900E5A2226AA06003A6AD3 /* File.swift */; };
 		ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
+		6E57A7CFC45E435C8C6D5F7C /* libReactNativePermissions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E64DA43D5C9F4A0591E85325 /* libReactNativePermissions.a */; };
+		E05D970797A2482EB991FBCC /* libRNFetchBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 87664C7CB59C4F65A93A6C5C /* libRNFetchBlob.a */; };
+		054EB3D0A7714B8CA5B2361F /* libRNBluetoothEscposPrinter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 36911E615F6B48B0B42B0B03 /* libRNBluetoothEscposPrinter.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -337,6 +339,12 @@
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		FA6F0735D9164F1A8E6D3011 /* libBleClient.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libBleClient.a; sourceTree = "<group>"; };
+		C3C02E2AF0604E2DB4D95889 /* ReactNativePermissions.xcodeproj */ = {isa = PBXFileReference; name = "ReactNativePermissions.xcodeproj"; path = "../node_modules/react-native-permissions/ios/ReactNativePermissions.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		E64DA43D5C9F4A0591E85325 /* libReactNativePermissions.a */ = {isa = PBXFileReference; name = "libReactNativePermissions.a"; path = "libReactNativePermissions.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		680A65CE9DD7432BA6D0B5DE /* RNFetchBlob.xcodeproj */ = {isa = PBXFileReference; name = "RNFetchBlob.xcodeproj"; path = "../node_modules/react-native-fetch-blob/ios/RNFetchBlob.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		87664C7CB59C4F65A93A6C5C /* libRNFetchBlob.a */ = {isa = PBXFileReference; name = "libRNFetchBlob.a"; path = "libRNFetchBlob.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		4DC4A96E56A94BE49E740688 /* RNBluetoothEscposPrinter.xcodeproj */ = {isa = PBXFileReference; name = "RNBluetoothEscposPrinter.xcodeproj"; path = "../node_modules/react-native-bluetooth-escpos-printer/ios/RNBluetoothEscposPrinter.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		36911E615F6B48B0B42B0B03 /* libRNBluetoothEscposPrinter.a */ = {isa = PBXFileReference; name = "libRNBluetoothEscposPrinter.a"; path = "libRNBluetoothEscposPrinter.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -359,6 +367,9 @@
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				9F8C7135B76E40E39EA69407 /* libRNCWebView.a in Frameworks */,
 				2577B29E92BB4EC8AF46BB82 /* libBleClient.a in Frameworks */,
+				6E57A7CFC45E435C8C6D5F7C /* libReactNativePermissions.a in Frameworks */,
+				E05D970797A2482EB991FBCC /* libRNFetchBlob.a in Frameworks */,
+				054EB3D0A7714B8CA5B2361F /* libRNBluetoothEscposPrinter.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,6 +537,9 @@
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				92F5E356B6024E43BB02DEE2 /* RNCWebView.xcodeproj */,
 				18E6383105A94832868A0E40 /* BleClient.xcodeproj */,
+				C3C02E2AF0604E2DB4D95889 /* ReactNativePermissions.xcodeproj */,
+				680A65CE9DD7432BA6D0B5DE /* RNFetchBlob.xcodeproj */,
+				4DC4A96E56A94BE49E740688 /* RNBluetoothEscposPrinter.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1059,6 +1073,9 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-webview/ios",
 					"$(SRCROOT)/../node_modules/react-native-ble-plx/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-permissions/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-fetch-blob/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-bluetooth-escpos-printer/ios/**",
 				);
 				INFOPLIST_FILE = dantrisoft/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1075,6 +1092,12 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				VERSIONING_SYSTEM = "apple-generic";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/dantrisoft\"",
+					"\"$(SRCROOT)/dantrisoft\"",
+					"\"$(SRCROOT)/dantrisoft\"",
+				);
 			};
 			name = Debug;
 		};
@@ -1090,6 +1113,9 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-webview/ios",
 					"$(SRCROOT)/../node_modules/react-native-ble-plx/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-permissions/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-fetch-blob/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-bluetooth-escpos-printer/ios/**",
 				);
 				INFOPLIST_FILE = dantrisoft/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1105,6 +1131,12 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "dantrisoft-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				VERSIONING_SYSTEM = "apple-generic";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/dantrisoft\"",
+					"\"$(SRCROOT)/dantrisoft\"",
+					"\"$(SRCROOT)/dantrisoft\"",
+				);
 			};
 			name = Release;
 		};
