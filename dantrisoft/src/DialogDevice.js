@@ -170,10 +170,10 @@ export default class DialogDevice extends Component {
                                     loading: false,
                                     boundAddress: row.address,
                                     name: row.name || "UNKNOWN"
-                                }, () => {
-                                    this.onPress(row.address)
-                                    Utils.saveDataWithKey(Constants.KEY_DEVICE, row.address)
+                                }, async () => {
+                                    await Utils.saveDataWithKey(Constants.KEY_DEVICE, row.address)
                                     this.dismissSlideAnimationDialog()
+                                    this.onPress(row.address)
                                 })
                             }, (e) => {
                                 this.setState({

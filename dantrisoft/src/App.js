@@ -25,20 +25,20 @@ export default class App extends Component {
     }
   }
 
-  componentDidMount() {
-    BluetoothManager.enableBluetooth().then((r) => {
-      BluetoothManager.scanDevices().then((s) => {
-        let deviceName = Utils.getDataWithKey(Constants.KEY_DEVICE)
-        if (Utils.isEmptyString(deviceName)) {
-          BluetoothManager.connect(deviceName).then(() => {
-            this.setState({ isConnect: true })
-          }, (e) => {
-          })
-        }
-      }, (er) => {
-      });
-    }, (err) => {
-    });
+  async componentDidMount() {
+    // BluetoothManager.enableBluetooth().then((r) => {
+    //   BluetoothManager.scanDevices().then(async (s) => {
+    let deviceName = await Utils.getDataWithKey(Constants.KEY_DEVICE)
+    if (!Utils.isEmptyString(deviceName)) {
+      BluetoothManager.connect(deviceName).then(() => {
+        this.setState({ isConnect: true })
+      }, (e) => {
+      })
+    }
+    //   }, (er) => {
+    //   });
+    // }, (err) => {
+    // });
   }
 
   render() {
@@ -54,7 +54,6 @@ export default class App extends Component {
           originWhitelist={['*']}
           useWebKit={true}
         />
-        <Button onPress={() => { this.onMessage('hello') }} title="open dialog" />
         <DialogDevice
           ref={(popupDialog) => { this.popupDialog = popupDialog; }}
           onPress={(address) => this._handlerConnectedDevice(address)}
@@ -64,16 +63,18 @@ export default class App extends Component {
   }
 
   onMessage(data) {
+    console.log("url : " + data.nativeEvent.data)
     //Prints out data that was passed.
     if (!this.state.isConnect) {
       this.popupDialog.showSlideAnimationDialog()
     }
+    this.setState({ isConnect: true })
     const fs = RNFetchBlob.fs;
     RNFetchBlob.config({
       fileCache: true
     })
-      // .fetch("GET", data.nativeEvent.data)
-      .fetch("GET", "https://dantrisoft.vn/ExportPdf/hoadon.png?fbclid=IwAR3_2soaGX1jdHWJB5UvYf8uhxgKwQ_ZaeZO0TtHlEf-yipONORT7uPGxzY")
+      .fetch("GET", data.nativeEvent.data)
+      // .fetch("GET", "https://dantrisoft.vn/ExportPdf/hoadon.png?fbclid=IwAR3_2soaGX1jdHWJB5UvYf8uhxgKwQ_ZaeZO0TtHlEf-yipONORT7uPGxzY")
       // the image is now dowloaded to device's storage
       .then(resp => {
         // the image path you can use it directly with Image component
@@ -83,13 +84,18 @@ export default class App extends Component {
       .then(base64Data => {
         // here's base64 encoded image
         console.log('test -----\n' + base64Data);
-        this.setState({ base64PDF: base64Data })
+        this.setState({ base64PDF: base64Data }, async () => {
+          let deviceName = await Utils.getDataWithKey(Constants.KEY_DEVICE)
+          if (!Utils.isEmptyString(deviceName)) {
+            this._handlerConnectedDevice()
+          }
+        })
         // remove the file from storage
         return fs.unlink(imagePath);
       });
   }
 
-  _handlerConnectedDevice = async (address) => {
+  _handlerConnectedDevice = async () => {
     try {
       await BluetoothEscposPrinter.printPic(this.state.base64PDF, { width: 500, left: 0 });
       await BluetoothEscposPrinter.printText("\r\n\r\n\r\n", {});
