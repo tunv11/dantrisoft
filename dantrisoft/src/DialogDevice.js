@@ -158,7 +158,7 @@ export default class DialogDevice extends Component {
         let items = [];
         for (let i in rows) {
             let row = rows[i];
-            if (row.address) {
+            if (row.address && row.name) {
                 items.push(
                     <TouchableOpacity key={new Date().getTime() + i} stlye={styles.wtf} onPress={() => {
                         this.setState({
