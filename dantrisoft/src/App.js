@@ -26,18 +26,18 @@ export default class App extends Component {
   }
 
   async componentDidMount() {
-    // BluetoothManager.enableBluetooth().then((r) => {
-    //   BluetoothManager.scanDevices().then(async (s) => {
-    let deviceName = await Utils.getDataWithKey(Constants.KEY_DEVICE)
-    if (!Utils.isEmptyString(deviceName)) {
-      BluetoothManager.connect(deviceName).then(() => {
-        this.setState({ isConnect: true })
-      }, (e) => {
-      })
-    }
-    //   }, (er) => {
-    //   });
-    // }, (err) => {
+    // BluetoothManager.enableBluetooth().then(async (r) => {
+    //   //   BluetoothManager.scanDevices().then(async (s) => {
+    //   let deviceName = await Utils.getDataWithKey(Constants.KEY_DEVICE)
+    // if (!Utils.isEmptyString(deviceName)) {
+    //   BluetoothManager.connect(deviceName).then(() => {
+    //     this.setState({ isConnect: true })
+    //   }, (e) => {
+    //   })
+    // }
+    //   //   }, (er) => {
+    //   //   });
+    //   // }, (err) => {
     // });
   }
 
@@ -73,8 +73,8 @@ export default class App extends Component {
     RNFetchBlob.config({
       fileCache: true
     })
-      .fetch("GET", data.nativeEvent.data)
-      // .fetch("GET", "https://dantrisoft.vn/ExportPdf/hoadon.png?fbclid=IwAR3_2soaGX1jdHWJB5UvYf8uhxgKwQ_ZaeZO0TtHlEf-yipONORT7uPGxzY")
+      // .fetch("GET", data.nativeEvent.data)
+      .fetch("GET", "https://www.upsieutoc.com/images/2019/03/19/hoadon.png")
       // the image is now dowloaded to device's storage
       .then(resp => {
         // the image path you can use it directly with Image component
@@ -85,10 +85,10 @@ export default class App extends Component {
         // here's base64 encoded image
         console.log('test -----\n' + base64Data);
         this.setState({ base64PDF: base64Data }, async () => {
-          let deviceName = await Utils.getDataWithKey(Constants.KEY_DEVICE)
-          if (!Utils.isEmptyString(deviceName)) {
-            this._handlerConnectedDevice()
-          }
+          // let deviceName = await Utils.getDataWithKey(Constants.KEY_DEVICE)
+          // if (!Utils.isEmptyString(deviceName)) {
+          //   this._handlerConnectedDevice()
+          // }
         })
         // remove the file from storage
         return fs.unlink(imagePath);
